@@ -12,10 +12,10 @@ def mail():
     j=GPIO.input(8)
     if i==1 and j==1:
         if flag1==2:
-            smtpuser = "gg.01090.gg@gmail.com"
-            smtppass = "guptajii"
+            smtpuser = "your email id"
+            smtppass = "password"
 
-            toadd = "harshv9988@gmail.com"
+            toadd = "email on which file to be sent"
             fromadd = smtpuser
             subject = "Python Test"
             header = "To: "+toadd+'\n'+"From: "+fromadd+'\n'+"Subject: "+subject+'\n'
@@ -36,10 +36,10 @@ def mail():
             flag1=3
     elif i==1 and j==0:
         if flag==1:
-            smtpuser = "gg.01090.gg@gmail.com"
-            smtppass = "guptajii"
+            smtpuser = "your email id"
+            smtppass = "password"
 
-            toadd = "harshv9988@gmail.com"
+            toadd = "email id on which file to be sent"
             fromadd = smtpuser
             subject = "Python Test"
             header = "To: "+toadd+'\n'+"From: "+fromadd+'\n'+"Subject: "+subject+'\n'
