@@ -114,7 +114,7 @@ def measure_average():
 # Main Script
 # -----------------------
 
-# Use BCM GPIO references
+# Use Board GPIO references
 # instead of physical pin numbers
 
 GPIO.setup(3,GPIO.OUT)
