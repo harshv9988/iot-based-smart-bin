@@ -1,5 +1,5 @@
 # iot-based-smart-bin
-This is basically a smart dustbin which notifies its user when its half and full by sending an email on registered user email id and also gives hands free experience by automatic opeming system.
+This is basically a smart dustbin which notifies its user when its half and full by sending an email on registered user email id and also gives hands free experience by automatic flap opening system.
 ## contributors
 * Harsh Verma 
 * Sagar Garg
