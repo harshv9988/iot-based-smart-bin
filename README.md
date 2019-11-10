@@ -15,9 +15,3 @@ Opting for sensors that can also work in wet waste. Presently we are using infra
 * infrared sensors
 * servo motor
 * bin body
-
-
-## Code
-
-### block of code for sending mail
-'''
