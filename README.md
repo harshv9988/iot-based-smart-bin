@@ -74,14 +74,5 @@ def mail():
     elif i==0 and j==0:
         flag1=1
 '''
-## for sending mail
-'''
-    def mail():
-    global flag1
-    i=GPIO.input(10)
-    j=GPIO.input(8)
-    if i==1 and j==1:
-    if flag1==2:
-    smtpuser = "your email id"
-    smtppass = "password"
- '''
+### calculating distance
+
