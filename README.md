@@ -4,7 +4,7 @@ This is basically a smart dustbin which notifies its user when its half and full
 * Harsh Verma 
 * Sagar Garg
 ## Idea for the project
-As we all have seen large mettalic dustbins of municipal corporation in different parts of a city, people after collecting their waste from their houses collectively dumped that waste in these dustbin ** BUT ** after some time when these dustbins reached to their full capacity and there is no space left for more trash people started to their their waste region around the dustbins and due to this a huge pile of waste having foul smell is created around that area. So for this we have created this smart dustbin system , after installing this system in those dustbins it can notify the municipal corporation about the particular dustbin which is fulled on timely basis and then they can easily free the dustbin by taking out the waste.
+As we all have seen large mettalic dustbins of municipal corporation in different parts of a city, people after collecting their waste from their houses collectively dumped that waste in these dustbin ** BUT ** after some time when these dustbins reached to their full capacity and there is no space left for more trash people started to their their waste region around the dustbins and due to this a huge pile of waste having foul smell is created around that area. So for this we have created this smart dustbin system , after installing this system in those dustbins it can notify the municipal corporation about the particular dustbin which is fulled on timely basis and then they can easily empty the dustbin by taking out the waste.
 ## modifications for future
 * we are thinking to upload all the data to the cloud platforms like thingspeak so that we can monitor the waste productions in different parts of cities and can monitor easily the waste production rate and can increase the frequency of dumping trucks in those regions so that they can clean those areas more frequently
 ## Challenges
@@ -74,7 +74,7 @@ def mail():
     elif i==0 and j==0:
         flag1=1
 ```
-### calculating distance
+### calculating distance and opening flap using servo motor
 ```
 def measure():
   *This function measures a distance
@@ -113,4 +113,33 @@ def measure_average():
   distance = distance1 + distance2 + distance3
   distance = distance / 3
   return distance
+```
+### working loop of all functions
+```
+try:
+
+  while True:
+    distance = measure_average()
+    print ("Distance : %.1f" % distance)
+    if distance < 30 :
+        if flag == False :
+            pwm.start(0)
+            SetAngle(0)
+            print("open")
+            flag = True
+    elif flag == True:
+        pwm.start(1)
+        SetAngle(90)
+        print("closed")
+        flag = False
+    else:
+        mail()
+        
+    
+    time.sleep(1)
+
+except KeyboardInterrupt:
+  # User pressed CTRL-C
+  # Reset GPIO settings
+  GPIO.cleanup()
 ```
