@@ -76,9 +76,8 @@ def mail():
 '''
 ### calculating distance
 '''
-
 def measure():
-    *This function measures a distance
+  # This function measures a distance
   GPIO.output(GPIO_TRIGGER, True)
   time.sleep(0.00001)
   GPIO.output(GPIO_TRIGGER, False)
@@ -104,8 +103,8 @@ def SetAngle(angle):
     pwm.ChangeDutyCycle(duty)
 
 def measure_average():
-  *This function takes 3 measurements and
-  *returns the average.
+  # This function takes 3 measurements and
+  # returns the average.
   distance1=measure()
   time.sleep(0.1)
   distance2=measure()
@@ -114,6 +113,4 @@ def measure_average():
   distance = distance1 + distance2 + distance3
   distance = distance / 3
   return distance
-  
-  '''
-
+'''
