@@ -15,3 +15,62 @@ Opting for sensors that can also work in wet waste. Presently we are using infra
 * infrared sensors
 * servo motor
 * bin body
+
+## code
+### block of code for sending mail
+'''
+def mail():
+    global flag1
+    i=GPIO.input(10)
+    j=GPIO.input(8)
+    if i==1 and j==1:
+        if flag1==2:
+            smtpuser = "your email id"
+            smtppass = "password"
+
+            toadd = "email on which file to be sent"
+            fromadd = smtpuser
+            subject = "Python Test"
+            header = "To: "+toadd+'\n'+"From: "+fromadd+'\n'+"Subject: "+subject+'\n'
+            body = "full"
+            message = header+'\n'+body
+    
+            print(message)
+
+            s = smtplib.SMTP("smtp.gmail.com",587)
+
+            s.ehlo()
+            s.starttls()
+            s.ehlo()
+            
+            s.login(smtpuser, smtppass)
+            s.sendmail(fromadd, toadd, message)
+            s.quit()
+            flag1=3
+    elif i==1 and j==0:
+        if flag==1:
+            smtpuser = "your email id"
+            smtppass = "password"
+
+            toadd = "email id on which file to be sent"
+            fromadd = smtpuser
+            subject = "Python Test"
+            header = "To: "+toadd+'\n'+"From: "+fromadd+'\n'+"Subject: "+subject+'\n'
+            body = "half"
+            message = header+'\n'+body
+    
+            print(message)
+
+            s = smtplib.SMTP("smtp.gmail.com",587)
+
+            s.ehlo()
+            s.starttls()
+            s.ehlo()
+            
+            s.login(smtpuser, smtppass)
+            s.sendmail(fromadd, toadd, message)
+            s.quit()
+            flag1=2
+    elif i==0 and j==0:
+        flag1=1
+'''
