@@ -18,7 +18,7 @@ Opting for sensors that can also work in wet waste. Presently we are using infra
 
 ## code
 ### block of code for sending mail
-'''
+```
 def mail():
     global flag1
     i=GPIO.input(10)
@@ -73,7 +73,7 @@ def mail():
             flag1=2
     elif i==0 and j==0:
         flag1=1
-'''
+```
 ### calculating distance
 ```
 def measure():
